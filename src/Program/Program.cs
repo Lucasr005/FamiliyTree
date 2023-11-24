@@ -7,24 +7,30 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node n1 = new Node(1);
-            Node n2 = new Node(2);
-            Node n3 = new Node(3);
-            Node n4 = new Node(4);
-            Node n5 = new Node(5);
-            Node n6 = new Node(6);
-            Node n7 = new Node(7);
+            Node<Persona> abuelo = new Node<Persona> (new Persona("Abuelo", 80));
+            Node<Persona> abuela = new Node<Persona> (new Persona("Abuela", 79));
+            Node<Persona> padre = new Node<Persona> (new Persona("Padre", 56));
+            Node<Persona> madre = new Node<Persona> (new Persona("Madre", 55));
+            Node<Persona> hijo = new Node<Persona> (new Persona("Hijo", 18));
 
-            n1.AddChildren(n2);
-            n1.AddChildren(n3);
+            abuelo.AddChildren(madre);
+            abuela.AddChildren(madre);
 
-            n2.AddChildren(n4);
-            n2.AddChildren(n5);
+            madre.AddChildren(hijo);
+            padre.AddChildren(hijo);
 
-            n3.AddChildren(n6);
-            n3.AddChildren(n7);
+            EdadSumarVisitor edadSumarVisitor = new EdadSumarVisitor();
+            abuelo.Accept(edadSumarVisitor);
+            Console.WriteLine($"La suma de las edades es: {edadSumarVisitor.sumadorEdades}");
 
-            // visitar el árbol aquí
+            HijoMayorVisitor hijoMayorVisitor = new HijoMayorVisitor();
+            padre.Accept(hijoMayorVisitor);
+            Console.WriteLine($"La edad de el hijo mayor es: {hijoMayorVisitor.HijoMayor}");
+
+            NombreLargoVisitor nombreLargoVisitor = new NombreLargoVisitor();
+            madre.Accept(nombreLargoVisitor);
+            Console.WriteLine($"El nombre mas largo es: {nombreLargoVisitor.NombreLargo}");
+
         }
     }
 }
