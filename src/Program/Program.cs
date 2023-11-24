@@ -9,7 +9,7 @@ namespace Program
         {
             Node<Persona> abuelo = new Node<Persona> (new Persona("Oscar", 80));
             Node<Persona> abuela = new Node<Persona> (new Persona("Bety", 79));
-            Node<Persona> padre = new Node<Persona> (new Persona("Migeul", 56));
+            Node<Persona> padre = new Node<Persona> (new Persona("Miguel", 56));
             Node<Persona> madre = new Node<Persona> (new Persona("Jacqueline", 55));
             Node<Persona> hijo = new Node<Persona> (new Persona("Lucas", 18));
 
