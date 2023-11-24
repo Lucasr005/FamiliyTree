@@ -7,11 +7,11 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node<Persona> abuelo = new Node<Persona> (new Persona("Abuelo", 80));
-            Node<Persona> abuela = new Node<Persona> (new Persona("Abuela", 79));
-            Node<Persona> padre = new Node<Persona> (new Persona("Padre", 56));
-            Node<Persona> madre = new Node<Persona> (new Persona("Madre", 55));
-            Node<Persona> hijo = new Node<Persona> (new Persona("Hijo", 18));
+            Node<Persona> abuelo = new Node<Persona> (new Persona("Oscar", 80));
+            Node<Persona> abuela = new Node<Persona> (new Persona("Bety", 79));
+            Node<Persona> padre = new Node<Persona> (new Persona("Migeul", 56));
+            Node<Persona> madre = new Node<Persona> (new Persona("Jacqueline", 55));
+            Node<Persona> hijo = new Node<Persona> (new Persona("Lucas", 18));
 
             abuelo.AddChildren(madre);
             abuela.AddChildren(madre);
